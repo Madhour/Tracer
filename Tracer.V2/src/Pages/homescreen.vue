@@ -58,10 +58,20 @@
       <v-icon>mdi-alert-plus-outline</v-icon>
       </v-btn>
     </div>
-    <tab_bar></tab_bar>
-    <div>
-      <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
+    <div class="homescreen_button">
+      <v-btn
+          color= "#99D7F0"
+          dark
+          v-on:click="to_faq"
+      >
+        Information
+        <v-icon>mdi-alert-plus-outline</v-icon>
+      </v-btn>
     </div>
+    <tab_bar></tab_bar>
+<!--    <div>-->
+<!--      <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -86,9 +96,6 @@ export default {
     scanroute() {
       this.$router.push({path: '/scanpage'});
     },
-    eventroute() {
-      //this.$router.push({path: '/create_event'})
-    },
     to_settings() {
       this.$router.push({path: '/settings'});
       //Experimental: data can be sent to backend via fetch
@@ -103,6 +110,7 @@ export default {
       })
       //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'}) */
     },
+
     /*onRefresh: function () {
       return new Promise(function (resolve) {
         setTimeout(function () {
@@ -110,6 +118,9 @@ export default {
         }, 1000);
       });
     },*/
+    to_faq() {
+      this.$router.push({path: '/to_faq'})
+    },
 
     /*risk_calculation(){
       var alert;
@@ -121,6 +132,7 @@ export default {
         document.getElementById("risk").style.color = '#287A42'
       }
     },*/
+
 
 
     data() {

@@ -8,6 +8,7 @@ import create_event from "@/Pages/create_event";
 import qr_scanner from "@/Pages/qr_scanner";
 import scan_success from "@/Pages/scan_success";
 import qr_generator from "@/components/qr_generator";
+import faq from "@/components/faq";
 
 Vue.use(VueRouter)
 
@@ -44,6 +45,10 @@ const routes = [
     path: '/qr_generator',
     component: qr_generator,
   },
+  {
+    path: '/to_faq',
+    component: faq,
+  }
 ]
 
 const router = new VueRouter({
